@@ -30,7 +30,7 @@ public abstract class Enemy extends Sprite {
             return;
         }
 
-        fillHeathRect = Game.TILE_SIZE * health/totalHealth;
+        fillHeathRect = Game.TILE_SIZE * health / totalHealth;
         g2.fillRect(positionX, positionY - Game.TILE_SIZE - 9, fillHeathRect, 8);
     }
 

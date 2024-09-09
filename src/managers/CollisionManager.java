@@ -29,17 +29,18 @@ public class CollisionManager {
             while (true) {
                 ArrayList<Enemy> enemyArrayList = arrayListBlockingQueueEnemy.take();
                 ArrayList<Bullet> bulletArrayList = arrayListBlockingQueueBullet.take();
-                if(!enemyArrayList.isEmpty()) {
-                   for (Enemy enemy : enemyArrayList) {
-                       bulletArrayList.removeIf(bullet -> {
-                           if (bullet.spriteRectangle.intersects(enemy.spriteRectangle) && bullet.isPlayerBullet) {
-                               enemy.health -= (int) bullet.damage;
-                               gameManager.score += (int) bullet.damage;
-                           }
-                           if(bullet.spriteRectangle.intersects(gameManager.player.spriteRectangle) && !bullet.isPlayerBullet) gameManager.player.health -= (int) bullet.damage;
-                           return bullet.spriteRectangle.intersects(enemy.spriteRectangle) && bullet.isPlayerBullet;
-                       });
-                   }
+                if (!enemyArrayList.isEmpty()) {
+                    for (Enemy enemy : enemyArrayList) {
+                        bulletArrayList.removeIf(bullet -> {
+                            if (bullet.spriteRectangle.intersects(enemy.spriteRectangle) && bullet.isPlayerBullet) {
+                                enemy.health -= (int) bullet.damage;
+                                gameManager.score += (int) bullet.damage;
+                            }
+                            if (bullet.spriteRectangle.intersects(gameManager.player.spriteRectangle) && !bullet.isPlayerBullet)
+                                gameManager.player.health -= (int) bullet.damage;
+                            return bullet.spriteRectangle.intersects(enemy.spriteRectangle) && bullet.isPlayerBullet;
+                        });
+                    }
                 }
             }
 

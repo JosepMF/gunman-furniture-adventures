@@ -4,11 +4,11 @@ package utils;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.Vector;
 
 public class MouseHandler implements MouseListener {
-    public boolean isClicked;
     private final Point pointMouse = new Point();
+    public boolean isClicked;
+
     @Override
     public void mouseClicked(MouseEvent e) {
         isClicked = true;

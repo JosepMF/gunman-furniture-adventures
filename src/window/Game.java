@@ -36,16 +36,12 @@ public class Game extends JPanel {
     public EnemyManager enemyManager;
     // collision manager
     public CollisionManager collisionManager;
-
-
-    // game thread init
-    Thread gameThread;
-
     // game over manager
     public boolean gameOver = false;
-
     // score
     public int score;
+    // game thread init
+    Thread gameThread;
 
 
     // TODO: testing the chair enemy
@@ -119,16 +115,16 @@ public class Game extends JPanel {
 
         Graphics2D g2 = (Graphics2D) g;
 
-        if(gameOver) {
+        if (gameOver) {
             g2.setColor(Color.red);
             g2.setFont(new Font("time new romance", Font.BOLD, Game.TILE_SIZE));
-            g2.drawString("game over".toUpperCase(),(Game.WIDTH/2)-Game.TILE_SIZE, (Game.HEIGHT/2)-Game.TILE_SIZE);
+            g2.drawString("game over".toUpperCase(), (Game.WIDTH / 2) - Game.TILE_SIZE, (Game.HEIGHT / 2) - Game.TILE_SIZE);
             return;
         }
 
         // repainting
         g2.setColor(Color.BLACK);
-        g2.fillRect(0,0,WIDTH,HEIGHT);
+        g2.fillRect(0, 0, WIDTH, HEIGHT);
         // drawing functions
         player.draw(g2);
 

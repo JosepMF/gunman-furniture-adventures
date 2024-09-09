@@ -25,7 +25,7 @@ public class BulletManager {
             return;
         }
         for (Bullet b : bulletArrayList) {
-            if(b != null) {
+            if (b != null) {
                 b.update();
             }
         }

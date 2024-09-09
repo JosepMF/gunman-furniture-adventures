@@ -5,7 +5,7 @@ import window.Game;
 
 import java.awt.*;
 
-public class Chair extends Enemy{
+public class Chair extends Enemy {
     public Chair(Player playerTracked, int positionX, int positionY) {
         super(positionX, positionY);
         this.positionX = 200;
@@ -21,7 +21,7 @@ public class Chair extends Enemy{
     @Override
     public void attack() {
         // if the player rectangle collides with playerTracked rectangle, the chair subtracts 1 point of the health of the playerTracked
-        if(this.spriteRectangle.intersects(this.playerTracked.spriteRectangle)) this.playerTracked.health -= 1;
+        if (this.spriteRectangle.intersects(this.playerTracked.spriteRectangle)) this.playerTracked.health -= 1;
     }
 
     @Override

@@ -1,7 +1,6 @@
 package window;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class GameWindow extends JFrame {
     private static GameWindow gameWindow;
@@ -19,7 +18,7 @@ public class GameWindow extends JFrame {
     }
 
     public static void run() {
-        if(gameWindow == null) {
+        if (gameWindow == null) {
             gameWindow = new GameWindow();
         }
     }

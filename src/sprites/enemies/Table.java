@@ -29,13 +29,13 @@ public class Table extends Enemy {
      */
     @Override
     public void attack() {
-        if(counter == 100) {
-            gameManger.bulletManager.addBullet(new Bullet((new double[] {1,0}), positionX, positionY, 10, false));
-            gameManger.bulletManager.addBullet(new Bullet((new double[] {-1,0}), positionX, positionY, 10, false));
+        if (counter == 100) {
+            gameManger.bulletManager.addBullet(new Bullet((new double[]{1, 0}), positionX, positionY, 10, false));
+            gameManger.bulletManager.addBullet(new Bullet((new double[]{-1, 0}), positionX, positionY, 10, false));
         }
-        if(counter == 200) {
-            gameManger.bulletManager.addBullet(new Bullet((new double[] {0,1}), positionX, positionY, 10, false));
-            gameManger.bulletManager.addBullet(new Bullet((new double[] {0,-1}), positionX, positionY, 10, false));
+        if (counter == 200) {
+            gameManger.bulletManager.addBullet(new Bullet((new double[]{0, 1}), positionX, positionY, 10, false));
+            gameManger.bulletManager.addBullet(new Bullet((new double[]{0, -1}), positionX, positionY, 10, false));
             counter = -1;
         }
         counter++;

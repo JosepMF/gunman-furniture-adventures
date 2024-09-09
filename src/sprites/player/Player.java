@@ -50,10 +50,10 @@ public class Player extends Sprite {
 
     // motion of player
     private void motion() {
-        if(keyHandler.upKey) positionY -= speed;
-        if(keyHandler.downKey) positionY += speed;
-        if(keyHandler.leftKey) positionX -= speed;
-        if(keyHandler.rightKey) positionX += speed;
+        if (keyHandler.upKey) positionY -= speed;
+        if (keyHandler.downKey) positionY += speed;
+        if (keyHandler.leftKey) positionX -= speed;
+        if (keyHandler.rightKey) positionX += speed;
     }
 
     private void shoot() {
@@ -69,7 +69,7 @@ public class Player extends Sprite {
         unitaryShootVec[1] = shootVec[1] / Math.sqrt(a);
 
 
-        if(mouseHandler.isClicked) {
+        if (mouseHandler.isClicked) {
             Bullet bullet = new Bullet(unitaryShootVec, positionX, positionY, 25, true);
             gameManger.bulletManager.addBullet(bullet);
         }

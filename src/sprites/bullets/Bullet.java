@@ -7,8 +7,8 @@ import java.awt.*;
 
 public class Bullet extends Sprite {
     public float damage;
-    double[] vectorMotion;
     public boolean isPlayerBullet;
+    double[] vectorMotion;
 
     public Bullet(double[] vectorMotion, int positionX, int positionY, int damage, boolean isPlayerBullet) {
         this.speed = 6;

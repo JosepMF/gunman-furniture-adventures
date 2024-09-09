@@ -12,8 +12,8 @@ import java.util.Random;
 
 public class EnemyManager {
     private final Game gameManager;
-    public ArrayList<Enemy> enemiesArrayList;
     private final Player playerTracked;
+    public ArrayList<Enemy> enemiesArrayList;
 
     public EnemyManager(Player playerTracked, Game gameManager) {
         enemiesArrayList = new ArrayList<>();
@@ -33,12 +33,12 @@ public class EnemyManager {
         while (canSpawnEnemy) {
             int x = (new Random()).nextInt(0, Game.WIDTH) - Game.TILE_SIZE;
             int y = (new Random()).nextInt(0, Game.HEIGHT) - Game.TILE_SIZE;
-            enemiesArrayList.add(new Chair(playerTracked, x,y));
+            enemiesArrayList.add(new Chair(playerTracked, x, y));
             enemiesArrayList.add((new Table(x, y, gameManager)));
 
             if (!enemiesArrayList.isEmpty()) {
                 enemiesArrayList.add((new Table(x, y, gameManager)));
-                enemiesArrayList.add((new Chair(playerTracked, x,y)));
+                enemiesArrayList.add((new Chair(playerTracked, x, y)));
             }
             try {
                 Thread.sleep(10000);
@@ -48,9 +48,9 @@ public class EnemyManager {
         }
     }
 
-    public void update()  {
-        for(Enemy enemy : enemiesArrayList) {
-            if(enemy != null) {
+    public void update() {
+        for (Enemy enemy : enemiesArrayList) {
+            if (enemy != null) {
                 // update the enemies
                 enemy.update();
 
@@ -61,8 +61,8 @@ public class EnemyManager {
     }
 
     public void draw(Graphics2D g2) {
-        for(Enemy enemy : enemiesArrayList) {
-            if(enemy != null) {
+        for (Enemy enemy : enemiesArrayList) {
+            if (enemy != null) {
                 enemy.draw(g2);
             }
         }
